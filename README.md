@@ -22,7 +22,8 @@ No olvides reconocer la autoría
 
 ## Contenido en este repo
 
-- Crear el proyecto
+- [Crear el proyecto](#-Crear-el-proyecto)
+- [Conociendo el editor](#-Conociendo-el-editor)
 - Autor
 
 ## Crear el proyecto
@@ -40,6 +41,70 @@ Nos abrirá una nueva ventana en esta seleccionaremos el template 2D (<span styl
 Esto generará un nuevo proyecto y nos abrira el editor.
 
 ![Editor Abierto](GitHubNeeds/Editor_0.PNG)
+
+## Conociendo el editor
+
+Vamos a hablar un poco del editor y de sus partes:
+
+### Hierarchy
+
+Aquí se irán organizando los GameObjects que vayamos agregando a nuestra escena, y en él podremos organizarlos.
+
+![Hierarchy](GitHubNeeds/Hierarchy.PNG)
+
+### Scene
+
+Aquí podremos modificar los elementos de nuestra escena para acomodarlos en la forma que deseemos dentro de la escena
+
+![Scene](GitHubNeeds/Scene.PNG)
+
+### Game
+
+Esta ventana se utilizará cuando corramos nuestro juego para mostrar un preview de como correria el juego ya en la plataforma exportada. Cabe recalcar que aunque el modo "Play" es una buena representación de como funcionara el juego, siempre se debe exportar el juego y probar en la plataforma deseada para corregir cualquier error que se muestre.
+
+![Game](GitHubNeeds/Game.PNG)
+
+### Asset Store
+
+Esta pestaña es una ventana web para abrir el asset store de unity aquí podremos comprar algunos plugins, No usaremos esta ventana en este Tutorial
+
+![Asset Store](GitHubNeeds/AssetStore.PNG)
+
+### Inspector
+
+Este apartado nos mostrará los detalles de los objetos que seleccionemos, más adelante conoceremos más de su uso.
+
+![Inspector](GitHubNeeds/Inspector.PNG)
+
+### Project
+
+Este es un explorador de archivos que tenemos dentro de nuestro editor para poder trabajar con ellos dentro de nuestro proyecto
+
+![Project](GitHubNeeds/Project.PNG)
+
+### Console
+
+Esta será nuestra consola, aquí se imprimirán mensajes relacionados al funcionamiento de nuestro proyecto, entre ellos advertencias, errores y más.
+
+![Console](GitHubNeeds/Console.PNG)
+
+### Botones Editor
+
+Estos botones se usan para Reproducir, Pausar y Adelantar(este se usa cuando el juego está en pausa y adelanta solo un frame).
+
+![Botones Editor](GitHubNeeds/Play_Buttons.PNG)
+
+### Botones Navegacion
+
+Estos se utilizan para mover los elementos dentro de nuestras escenas.
+
+![Botones Navegacion](GitHubNeeds/Move_Buttons.PNG)
+
+### Modo Play
+
+Cuando reproducimos el juego nuestro editor automáticamente cambiará automáticamente a la ventana de game para reproducir el juego, mientras estemos en este modo cualquier cambio que realizaremos no se guardará, nuestro editor se verá ligeramente más oscuro.
+
+![Modo Play](GitHubNeeds/PlayMode.PNG)
 
 ## Autor
 
