@@ -25,6 +25,7 @@ No olvides reconocer la autoría
 - [Crear el proyecto](#-Crear-el-proyecto)
 - [Conociendo el editor](#-Conociendo-el-editor)
 - [Nuestro primer codigo](#-Nuestro-primer-codigo)
+- [Variables](#-Variables)
 - [Autor](#-Autor)
 
 ## Crear el proyecto
@@ -275,6 +276,112 @@ Esta es una función que incluye Unity y es la que imprime en la consola dentro 
 ```cs
 Debug.Log("Hola Pepe");
 ```
+
+## Variables
+
+Las variables son de los elementos más usados a la hora de programar son elementos que se utilizan para devolver un valor, puede ser un valor constante o un valor que se puede cambiar
+
+todas las variables se escriben con la siguiente sintaxis:
+
+> acceso (public, private, etc.) + tipo de variable (string, int, etc.) + nombre de variable (en lo general se usa lowerCamelCase) + ;
+
+En C# y Unity existen múltiples tipos de variables las más comunes son:
+
+### String o Cadena de texto
+
+Un string o cadena de texto es una variable que almacena texto, su palabra clave es string, ejemplo:
+
+```cs
+private string miNombre = "Pepe";
+```
+
+### Integers o Enteros
+
+Son números enteros estos no contienen puntos decimales, su palabra reservada es int, ejemplo:
+
+```cs
+private int miEdad = 26;
+```
+
+### Doubles o dobles
+
+Estos son numeros decimales, su uso en videojuegos en poco se suele usar otro tipo de decimal, su palabra clave es double, ejemplo:
+
+```cs
+private double miEstatura = 20.3;
+```
+
+### Floats o decimales
+
+Estos números son decimales, estos a diferencia de los doubles son muy utilizados en la creación de videojuegos, estos tienen la peculiaridad de que deben terminar con una f y su palabra reservada es float, ejemplo:
+
+```cs
+private float miPeso = 68.8f;
+```
+
+### Booleans o booleanos
+
+Estos son valores binarios que solo pueden ser true(verdadero) o false(falso), su palabra reservada es bool, ejemplo:
+
+```cs
+private bool soyListo = true;
+```
+
+### Usando variables en nuestro proyecto
+
+Ahora empezaremos a usar variables para eso iremos a nuestro script GameManager y después del corchete de la clase agregaremos una variable del tipo string que se llame miNombre, tu código debe quedar asi:
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+    string miNombre = "Pancho";
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Debug.Log("Hola Mundo");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
+```
+
+Ahora para lograr que el programa nos salude usaremos una función que se llama interpolación, que es agregar a una cadena de texto una variable para eso modificaremos la línea Debug.Log("Hola Mundo") por Debug.Log($"Hola {miNombre}"), lo cual debe dar el siguiente resultado:
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+    string miNombre = "Pancho";
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Debug.Log($"Hola {miNombre}");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
+```
+
+al usar el símbolo $ estamos diciendo que usaremos la interpolación y el elemento entre corchetes es el que se agregara
+
+Si guardamos el script y corremos nuestro programa en Unity la consola correrá el siguiente mensaje en este caso "Hola Pancho".
 
 ## Autor
 
