@@ -24,7 +24,8 @@ No olvides reconocer la autoría
 
 - [Crear el proyecto](#-Crear-el-proyecto)
 - [Conociendo el editor](#-Conociendo-el-editor)
-- Autor
+- [Nuestro primer codigo](#-Nuestro-primer-codigo)
+- [Autor](#-Autor)
 
 ## Crear el proyecto
 
@@ -105,6 +106,175 @@ Estos se utilizan para mover los elementos dentro de nuestras escenas.
 Cuando reproducimos el juego nuestro editor automáticamente cambiará automáticamente a la ventana de game para reproducir el juego, mientras estemos en este modo cualquier cambio que realizaremos no se guardará, nuestro editor se verá ligeramente más oscuro.
 
 ![Modo Play](GitHubNeeds/PlayMode.PNG)
+
+## Nuestro Primer Código
+
+Bien ahora comenzaremos a programar, pero sin olvidar el orden para lograr esto, comenzaremos por crear una nueva carpeta que se llame Scripts, para lograrlo en la ventana de project haz click derecho, te saldra un menu, en la parte superior saldra la opcion de create seleccionala con el mouse y te abrirá un nuevo menú ahí te saldrá inmediatamente la opción folder seleccionalo y crearas un nuevo folder
+
+![Create Folder](GitHubNeeds/CreateFolder.PNG)
+
+Enseguida ingresa el nombre de nuestra carpeta en este caso Scripts, en caso de que pierdas la selección de la carpeta puedes renombrarlo presionando Enter en mac y F12 en windows.
+
+![New Folder](GitHubNeeds/New_Folder.PNG)
+
+Tu Proyecto se deberia de ver ahora así
+
+![Script Folder](GitHubNeeds/Script_Folder.PNG)
+
+Haz doble click en el folder Script y ahora crea un script de C# para lograrlo de nuevo en la ventana project haz click derecho >> Create >> C# Script
+
+![Create Script](GitHubNeeds/Create_Script.PNG)
+
+Nombralo "GameManager" es importante que aquí pongas el nombre inmediatamente después de crear el script y con esta estructura, los scripts no pueden tener espacios y se usa la nomenclatura ![UpperCamelCase](https://es.wikipedia.org/wiki/Camel_case), tu projecto se vera ahora así
+
+![Game Manager](GitHubNeeds/Game_Manager.PNG)
+
+Da doble click y te abrirá Visual Studio 2019
+
+Verás un script asi
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
+```
+
+Dentro de los corchetes de Start escribiremos el siguiente código
+
+```cs
+Debug.Log("Hola Mundo");
+```
+
+Te quedará un script asi:
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        Debug.Log("Hola Mundo");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
+```
+
+Para poder correrlo necesitamos agregarlo en nuestra escena para lograr esto regresamos a nuestro editor y agregar un objeto llamado manager para lograrlo haremos lo siguiente en la pestaña de Hierarchy damos Click Derecho >> Create Empty
+
+![Create Empty](GitHubNeeds/Create_Empty.PNG)
+
+Para cambiar el nombre selecciona el elemento y en la ventana de hierarchy en la parte superior podrás cambiarle el nombre en este caso le pondremos Manager
+
+![New GameObject](GitHubNeeds/New_GameObject.PNG)
+
+![New Manager](GitHubNeeds/New_Manager.PNG)
+
+Ahora en el boton de Add Component de nuestro Inspector agregaremos el script GameManager para hacerlo hacemos el siguiente proceso Add Componente >> Escribe GameManager >> Selecciona el elemento
+
+![Add Manager](GitHubNeeds/Add_Manager.PNG)
+
+Terminara tu elemento manager así
+
+![Game_Manager](GitHubNeeds/Manager_Finish.PNG)
+
+Ahora en la pestaña de Game asegurate de que no está habilitado Maximize On Play debería lucir algo así
+
+![Game_window](GitHubNeeds/Game_Look.PNG)
+
+Ahora presiona el botón Play, en la consola debería aparecer el mensaje Hola Mundo, también en la esquina inferior derecha de unity podrás ver siempre el último mensaje de la consola
+
+![Hello World](GitHubNeeds/Hello_World.PNG)
+
+¡Felicidades has hecho tu primer programa en Unity!
+
+### Entendiendo nuestro código
+
+Ahora te explicare que es cada parte de nuestro código
+
+La primera región está conformada por:
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+```
+
+estos elementos son las librerías que usaremos en nuestro código más adelante entenderemos como agregar otras y como eliminar las que no utilizamos.
+
+Después vemos lo siguiente:
+
+```cs
+public class GameManager : MonoBehaviour
+```
+
+public class definen que esta será una clase pública le sigue el nombre de la clase en este caso GameManager después, : que indican que esta clase hereda, seguido de la clase de la cual hereda MonoBehaviour, después de esta declaración las clases siempre se deben abrir y cerrar con corchetes.
+
+```cs
+public class GameManager : MonoBehaviour
+{
+
+}
+```
+
+Todo lo que esté dentro de estos corchetes estará contenido dentro de esa clase
+
+Después vemos lo siguiente
+
+```cs
+    // Start is called before the first frame update
+    void Start()
+    {
+        Debug.Log("Hola Mundo");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+```
+
+Todas las líneas de código que comienzan en // son comentarios estos nos ayudan a entender nuestro proceso de programación y no son interpretado por el compilador.
+
+Después tenemos los métodos un método es una serie tareas que realizan una acción (Nota importante todas las clases que heredan de MonoBehaviour incluyen por default las funciones void Start y void Update ), cuando estas no regresan ningún valor se utiliza la palabra clave void para decirle a la computadora que eso es una clase seguida del nombre de la clase, paréntesis y por último llaves.
+
+Dentro de esas llaves se ponen las instrucciones que se deben realizar para que la máquina lleve a cabo esa función
+
+En el caso de la función Start tenemos la linea que hemos escrito
+
+```cs
+Debug.Log("Hola Mundo");
+```
+
+Esta es una función que incluye Unity y es la que imprime en la consola dentro de los paréntesis pasamos un argumento que es un texto en C# los textos o strings siempre se escriben entre " ", si quisieras cambiar el mensaje solo faltaria cambiar el texto que está dentro de los paréntesis para conseguir que nuestra consola imprima "Hola Pepe":
+
+```cs
+Debug.Log("Hola Pepe");
+```
 
 ## Autor
 
